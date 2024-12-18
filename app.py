@@ -70,7 +70,6 @@ def main():
         # Display results with custom styling
         st.markdown(f"""
             <div class="answer">
-                **Answer:**
                 {results}
             </div>
         """, unsafe_allow_html=True)
