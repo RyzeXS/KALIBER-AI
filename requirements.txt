@@ -8,3 +8,4 @@ anyio
 pytest
 pluggy
 gunicorn
+flask
