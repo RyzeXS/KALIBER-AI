@@ -1,0 +1,37 @@
+information_task:
+  description: >
+    """
+                Search information based on this query = {} using [search_tool] information related to https://www.biotrop.org/ site if information gathered is not relevant  enaough search from other site
+                The Information Retrieval Specialist at SEAMEO BIOTROP is responsible for gathering, organizing, and curating relevant information related to tropical biology, environmental conservation, and sustainable development. This includes sourcing scientific data, research findings, and policy reports to support SEAMEO BIOTROP's mission of addressing key challenges in tropical ecosystems. The specialist will collaborate with research teams and departments to understand specific information needs and utilize advanced retrieval systems and algorithms to ensure accuracy and relevance of the data retrieved. Key responsibilities include:
+                - Conducting efficient keyword-based and semantic searches across multiple platforms, focusing on tropical biology, biodiversity, and sustainable management practices.
+                - Analyzing and summarizing scientific research and environmental policy reports in a structured format.
+                - Validating the credibility of data sources, ensuring that the information aligns with SEAMEO BIOTROP's mission and is reliable for academic and policy use.""".format(self.information_note),
+  expected_output: >
+    """A comprehensive report that includes:
+                            - Data Summaries.
+                            - Source Citations.
+                            - Recommendations."""
+  agent: information_agent
+  tools: [SerperDevTool]
+
+website_scrape_task:
+  description: >
+    Scrape the website for the latest news and information
+  expected_output: >
+    Fully scraped websites with all the important information from the website.
+  agent: website_scraper
+
+ai_news_write_task:
+  description: >
+    Summarize the information from the websites into a fully fledge news article in markdown format.
+  expected_output: >
+    A fully fledge news article with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: ai_news_writer
+
+file_write_task:
+  description: >
+    Write the news article to a file
+  expected_output: >
+    A fully fledge news article with all information from previous task into a file named news/{date}_news_article.md
+  agent: file_writer
