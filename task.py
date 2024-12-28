@@ -38,10 +38,9 @@ class Tasks:
             Do not perform any search related to SMKN 5 Jember if the question does not explicitly mention it.
             """,
             expected_output=f"""A comprehensive report in {self.language} that includes:
-           Data Summary Clearly present key insights and findings in {self.language}, 
-           Detailed Answers Provide concise and accurate responses addressing the user's query, ensuring the use of {self.language}, 
-           Source Citations List all sources referenced, formatted for easy verification, and written in {self.language}, 
-           Actionable Recommendations Offer practical steps or suggestions based on the gathered information, 
+           - Data Summary Clearly present key insights and findings in {self.language}, 
+           - Detailed Answers Provide concise and accurate responses addressing the user's query, ensuring the use of {self.language}, 
+           - Source Citations List all sources referenced, formatted for easy verification, and written in {self.language},  
            and Conversation (if no specific question is asked) Engage the user with thoughtful and friendly dialogue in {self.language}, ensuring a positive user experience.
             """, 
             agent=Agents().information_agent(), 
