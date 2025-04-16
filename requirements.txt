@@ -4,8 +4,5 @@ streamlit
 langchain_openai
 crewai_tools
 langchain_community
-anyio
-pytest
-pluggy
-gunicorn
-flask
+
+    

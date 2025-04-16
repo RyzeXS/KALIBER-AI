@@ -9,17 +9,6 @@ class Tasks:
         self.gbook_note = event
         self.language = language
 
-    from crewai import Agent, Task, Process, Crew
-from agents import Agents 
-from tools import search_tool, scrape
-
-
-class Tasks:
-    def __init__(self, event, language):
-        self.information_note = event
-        self.gbook_note = event
-        self.language = language
-
     def information_task(self):
         search_task = Task(
             description=f"""
